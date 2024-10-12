@@ -1,14 +1,20 @@
 <template>
+    <Header />
     <div>
-    <h1>My Inertia CRUD</h1>
-    <Link href="posts/create">Create new Post</Link>
-    <table>
-        <thead>
-            <tr>
-            <th v-for="header in headers" :key="header">
-                {{ header }}
-            </th>
-            </tr>
+        <Button severity="info">
+            <Link href="/posts/create">Create new Post</Link>
+        </Button>
+        <br />
+
+        <br />
+
+        <table>
+            <thead>
+                <tr>
+                    <th v-for="header in headers" :key="header">
+                        {{ header }}
+                    </th>
+                </tr>
             </thead>
             <tbody>
                 <tr v-for="post in posts" :key="post.id">
@@ -20,18 +26,16 @@
     </div>
 </template>
 
-
 <script setup>
-  import { Link } from "@inertiajs/vue3";
+import Header from "@/Layouts/Header.vue";
+import { Link } from "@inertiajs/vue3";
 
-  defineProps({
+defineProps({
     posts: {
-      type: Array,
-      default: () => [],
+        type: Array,
+        default: () => [],
     },
-  });
+});
 
-  const headers = ["posts", "body"];
-  </script>
-
-
+const headers = ["posts", "body"];
+</script>
