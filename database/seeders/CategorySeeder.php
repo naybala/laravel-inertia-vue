@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class PostSeeder extends Seeder
+class CategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,7 @@ class PostSeeder extends Seeder
     {
         //
         $data = $this->prepareData();
-        DB::table('/posts')->insert($data);
+        DB::table('categories')->insert($data);
     }
 
     private function prepareData()
@@ -22,8 +22,9 @@ class PostSeeder extends Seeder
         $insertData = [];
         foreach (range(1, 20) as $a) {
             $insertData[] = [
-                'title' => 'Test Post - ' . $a,
-                'body' => 'Test Post Body - ' . $a,
+                'name' => 'Test Category - ' . $a,
+                'image' => "https://imgs.search.brave.com/GoIkknrD1Lu77CnsddP802iVtMnTp63Rc0_flJD8xq8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9sYXJh/dmVsLmlvL2ltYWdl/cy9sYXJhdmVsLnBu/Zw",
+                'description' => 'Test Description - ' . $a,
             ];
         };
         return $insertData;

@@ -16,6 +16,10 @@ import FloatLabel from "primevue/floatlabel";
 import Splitter from "primevue/splitter";
 import SplitterPanel from "primevue/splitterpanel";
 import Toast from "primevue/toast";
+import FileUpload from "primevue/fileupload";
+import Image from "primevue/image";
+import { useToast } from "primevue/usetoast";
+import "primeicons/primeicons.css";
 
 const appName = import.meta.env.VITE_APP_NAME || "Laravel";
 
@@ -47,6 +51,9 @@ createInertiaApp({
             .component("Splitter", Splitter)
             .component("SplitterPanel", SplitterPanel)
             .component("Toast", Toast)
+            .component("UseToast", useToast)
+            .component("FileUpload", FileUpload)
+            .component("Image", Image)
             .mount(el);
     },
     progress: {
